@@ -1,3 +1,7 @@
+english.telegram.bot:
+  userName: ${USER_NAME}
+  botToken: ${BOT_TOKEN}
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
