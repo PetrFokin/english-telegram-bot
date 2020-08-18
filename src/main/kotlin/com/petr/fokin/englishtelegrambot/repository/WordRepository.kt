@@ -1,9 +1,9 @@
-package com.petr.fokin.englishtelegrambot
+package com.petr.fokin.englishtelegrambot.repository
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface TextRepository: JpaRepository<TextEntity, Long> {
+interface WordRepository: JpaRepository<WordEntity, Long> {
 
 }
