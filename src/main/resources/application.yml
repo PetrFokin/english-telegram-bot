@@ -1,6 +1,8 @@
 english.telegram.bot:
   userName: ${USER_NAME}
   botToken: ${BOT_TOKEN}
+  translatorHost: "wordsapiv1.p.rapidapi.com"
+  authKey: ${RAPID_API_AUTH_KEY}
 
 spring:
   datasource:

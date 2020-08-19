@@ -8,4 +8,6 @@ import org.springframework.stereotype.Component
 class EnglishTelegramBotProperties {
     lateinit var userName: String
     lateinit var botToken: String
+    lateinit var translatorHost: String
+    lateinit var authKey: String
 }
