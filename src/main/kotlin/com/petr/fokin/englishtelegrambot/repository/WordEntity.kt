@@ -3,16 +3,15 @@ package com.petr.fokin.englishtelegrambot.repository
 
 import javax.persistence.*
 
-//TODO: finish
-@Table(name = "TEXT")
+@Table(name = "WORD")
 @Entity
 class WordEntity {
     @Id
-    @SequenceGenerator(name = "text_seq", sequenceName = "text_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "text_seq")
+    @SequenceGenerator(name = "word_seq", sequenceName = "word_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "word_seq")
     var id: Long? = null
 
-    @Column(name = "word", nullable = false)
+    @Column(name = "word")
     var word: String? = null
 
     @Column(name = "transcription")
@@ -21,10 +20,12 @@ class WordEntity {
     @Column(name = "definition")
     var definition: String? = null
 
-    @Column(name = "??????????")
+    @Column(name = "part_of_speech")
     var partOfSpeech: String? = null
 
-    @Column(name = "??????????")
+    @Column(name = "examples")
     var examples: String? = null
 
+    @Column(name = "chat_id")
+    var chatId: Long? = null
 }

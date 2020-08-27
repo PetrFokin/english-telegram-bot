@@ -15,6 +15,7 @@ class TranslatorClient(val okHttpClient: OkHttpClient,
                        val objectMapper: ObjectMapper,
                        val properties: EnglishTelegramBotProperties) {
 
+    //Do I need separate model?
     fun translateWord(word: String): WordEntity {
         val response = okHttpClient.newCall(getRequest(word)).execute().body().string()
         LOGGER.info(response)

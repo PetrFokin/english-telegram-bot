@@ -1,7 +1,11 @@
-create table TEXT (
- ID NUMERIC,
- WORD VARCHAR(1000) NOT NULL,
- TRANSCRIPTION VARCHAR(1000) DEFAULT NULL
+create table WORD (
+ id NUMERIC,
+ word VARCHAR(280) DEFAULT NULL,
+ transcription VARCHAR(280) DEFAULT NULL,
+ definition VARCHAR(1000) DEFAULT NULL,
+ part_of_speech VARCHAR(280) DEFAULT NULL,
+ examples VARCHAR(10000) DEFAULT NULL,
+ chat_id NUMERIC
 );
 
-create sequence text_seq start 1;
+create sequence word_seq start 1;
