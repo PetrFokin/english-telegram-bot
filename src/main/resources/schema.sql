@@ -3,7 +3,6 @@ create table WORD (
  word VARCHAR(280) DEFAULT NULL,
  transcription VARCHAR(280) DEFAULT NULL,
  definition VARCHAR(1000) DEFAULT NULL,
- part_of_speech VARCHAR(280) DEFAULT NULL,
  examples VARCHAR(10000) DEFAULT NULL,
  chat_id NUMERIC
 );

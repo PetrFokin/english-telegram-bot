@@ -20,12 +20,13 @@ class WordEntity {
     @Column(name = "definition")
     var definition: String? = null
 
-    @Column(name = "part_of_speech")
-    var partOfSpeech: String? = null
-
     @Column(name = "examples")
     var examples: String? = null
 
     @Column(name = "chat_id")
     var chatId: Long? = null
+
+    override fun toString(): String {
+        return "WordEntity(word=$word, transcription=$transcription, definition=$definition, examples=$examples)"
+    }
 }

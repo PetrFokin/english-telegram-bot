@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import org.telegram.telegrambots.meta.api.objects.Message
 
-private val LOGGER = LoggerFactory.getLogger(WordService::class.java)
+private val log = LoggerFactory.getLogger(WordService::class.java)
 
 @Service
 class WordService(val wordRepository: WordRepository,
@@ -15,8 +15,9 @@ class WordService(val wordRepository: WordRepository,
     fun saveWord(message: Message) {
         val word = message.text
         val chatId = message.chatId
-        LOGGER.info("New message: $word, from chatId: $chatId")
+        log.info("New message: $word, from chatId: $chatId")
         val translatedWord = client.translateWord(word)
+        log.info("Entity: $translatedWord")
         translatedWord.chatId = chatId
         wordRepository.save(translatedWord)
     }

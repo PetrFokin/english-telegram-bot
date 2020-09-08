@@ -13,14 +13,14 @@ private val LOGGER = LoggerFactory.getLogger(TranslatorClient::class.java)
 @Component
 class TranslatorClient(val okHttpClient: OkHttpClient,
                        val objectMapper: ObjectMapper,
+                       val wordMapper: WordMapper,
                        val properties: EnglishTelegramBotProperties) {
 
-    //Do I need separate model?
     fun translateWord(word: String): WordEntity {
         val response = okHttpClient.newCall(getRequest(word)).execute().body().string()
         LOGGER.info(response)
         val wordDto = objectMapper.readValue(response, WordDto::class.java)
-        return WordEntity() //TODO: fix by mapper
+        return wordMapper.mapToEntity(wordDto)
     }
 
     private fun getRequest(word: String) = Request.Builder()
